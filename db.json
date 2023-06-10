@@ -1,19 +1,24 @@
 {
-  "posts": [
+  "enquiry": [
     {
-      "id": 1,
-      "title": "json-server",
-      "author": "typicode"
+      "firstname": "Amit",
+      "lastname": "Singh",
+      "email": "amit@gmail.com",
+      "mobile": "90909090",
+      "height": 1.7,
+      "weight": 75,
+      "bmi": 25.95155709342561,
+      "bmiresult": "Overweight",
+      "gender": "Male",
+      "requiretrainer": "Yes",
+      "package": "Monthly",
+      "important": [
+        "Toxic Fat reduction",
+        "Building Lean Muscle"
+      ],
+      "havegymbefore": "Yes",
+      "enquirydate": "2023-06-09T18:30:00.000Z",
+      "id": 1
     }
-  ],
-  "comments": [
-    {
-      "id": 1,
-      "body": "some comment",
-      "postId": 1
-    }
-  ],
-  "profile": {
-    "name": "typicode"
-  }
+  ]
 }

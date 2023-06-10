@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
 import { debounceTime } from 'rxjs';
+import { ApiService } from '../service/api.service';
 
 @Component({
   selector: 'app-create-registration',
@@ -17,7 +18,7 @@ public  implists:string[]=[
 ,"Fitness"]
 
 public registerForm!:FormGroup
-constructor(private fb:FormBuilder){
+constructor(private fb:FormBuilder,private api :ApiService){
   
 }
 ngOnInit(): void {
@@ -46,6 +47,10 @@ ngOnInit(): void {
 }
 submit(){
   console.log(this.registerForm.value)
+  this.api.postRegistration(this.registerForm.value).subscribe(res=>{
+    console.log(res)
+  })
+
 }
 calculateBmi(height:number,){
   const weight =this.registerForm.value.weight;

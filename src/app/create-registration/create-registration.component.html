@@ -40,7 +40,7 @@
             <div class="col-md-6">
                 <mat-form-field appearance="outline">
                     <mat-label>Height</mat-label>
-                    <input  [readonly]="!this.registerForm.value?.weight" type="number"  matInput placeholder="height" formControlName="height">
+                    <input  [readonly]="!this.registerForm.value?.weight" type="number"   matInput placeholder="height" formControlName="height">
                     <mat-icon matSuffix><i class="fa fa-text-height"></i></mat-icon>
                     <mat-hint>Unit is meters</mat-hint>
                   </mat-form-field>
@@ -66,7 +66,7 @@
                         {{trainerOpt}}
                     </mat-radio-button>
                 </mat-radio-group>
-                <div>Selected option is: </div>
+                <div>Selected option is: {{this.registerForm.value?.requiretrainer}}</div>
             </div>
             <div class="col-md-6 mt-3">
                 <label id="example-radio-group-label">Gender</label>
@@ -75,7 +75,7 @@
                         {{gender}}
                     </mat-radio-button>
                 </mat-radio-group>
-                <div>Selected option is: </div>
+                <div>Selected option is: {{this.registerForm.value?.gender}} </div>
             </div>
             <div class="col-md-6 mt-4">
                 <mat-form-field appearance="outline">
@@ -104,7 +104,7 @@
                         {{beengym}}
                     </mat-radio-button>
                 </mat-radio-group>
-                <div>Selected option is: </div>
+                <div>Selected option is: {{this.registerForm.value?.havegymbefore}}</div>
             </div>
             <div class="col-md-6">
                 <mat-form-field  appearance="outline">

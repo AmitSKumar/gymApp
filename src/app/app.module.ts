@@ -9,6 +9,7 @@ import { RegistrationListComponent } from './registration-list/registration-list
 import { UserDetailComponent } from './user-detail/user-detail.component';
 import { MaterialModule } from './material/material.module';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
 @NgModule({
   declarations: [
     AppComponent,
@@ -23,6 +24,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     FormsModule,
     ReactiveFormsModule,
     MaterialModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
