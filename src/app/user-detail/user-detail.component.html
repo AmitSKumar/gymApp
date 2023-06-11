@@ -1,1 +1,72 @@
-<p>user-detail works!</p>
+<mat-card *ngIf="userDetails" class="example-card">
+    <mat-card-header>
+      <div mat-card-avatar class="example-header-image"></div>
+      <mat-card-title>{{userDetails.firstname}}</mat-card-title>
+      <mat-card-subtitle>{{userDetails.lastname}}</mat-card-subtitle>
+    </mat-card-header>
+    <mat-card-content>
+        <mat-list >
+            <mat-list-item >
+                <div  matLine>
+                    Mobile Mumber:
+                    <button mat-button>{{userDetails.mobile}}</button>
+                </div>
+            </mat-list-item>
+            <mat-list-item >
+                <div  matLine>
+                   Email:
+                    <button mat-button>{{userDetails.email}}</button>
+                </div>
+            </mat-list-item>
+           
+                <mat-list-item >
+                    <div  matLine>
+                        Gender:
+                        <button mat-button>{{userDetails.firstname}}</button>
+                    </div>
+                </mat-list-item>
+
+                
+                    <mat-list-item >
+                        <div  matLine>
+                            Package:
+                            <button mat-button>{{userDetails.package}}</button>
+                        </div>
+                    </mat-list-item>
+
+                    
+                        <mat-list-item >
+                            <div  matLine>
+                                BMI:
+                                <button mat-button>{{userDetails.bmi}}</button>
+                            </div>
+                        </mat-list-item>
+
+                    
+                            <mat-list-item >
+                                <div  matLine>
+                                    BMI Result:
+                                    <button mat-button>{{userDetails.bmiresult}}</button>
+                                </div>
+                            </mat-list-item>
+                            <mat-list-item >
+                                <div  matLine>
+                                    Trainer required:
+                                    <button mat-button>{{userDetails.requiretrainer}}</button>
+                                </div>
+                            </mat-list-item>
+                            <mat-list-item >
+                                <div  matLine>
+                                  Goals:
+                                  <button mat-button>
+                                    <ng-container *ngFor="let row of  userDetails.important">
+                                        <mat-chip-option selected>{{row}}</mat-chip-option>
+                                    </ng-container>
+                                  </button>
+                                   
+                                 
+                                </div>
+                            </mat-list-item>
+          </mat-list>
+    </mat-card-content>
+  </mat-card>

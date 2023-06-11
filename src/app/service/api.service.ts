@@ -11,8 +11,8 @@ private baseUrl:string="http://localhost:3000/enquiry"
   postRegistration(registerObj:User){
     return this.http.post<User>(`${this.baseUrl}`,registerObj)
   }
-  getRegistredUser(registerObj:User){
-    return this.http.get<User>(`${this.baseUrl}`)
+  getRegistredUser(){
+    return this.http.get<User[]>(`${this.baseUrl}`)
   }
   UpdateRegistredUser(registerObj:User,id:number){
     return this.http.put<User>(`${this.baseUrl}/${id}`,registerObj)
@@ -20,6 +20,8 @@ private baseUrl:string="http://localhost:3000/enquiry"
   DeleteRegistredUser(id:number){
     return this.http.delete<User>(`${this.baseUrl}/${id}`)
   }
-
+  getRegistredUserById(id:number){
+    return this.http.get<User>(`${this.baseUrl}/${id}`)
+  }
 
 }

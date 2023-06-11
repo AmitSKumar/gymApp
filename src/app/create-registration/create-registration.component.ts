@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
 import { debounceTime } from 'rxjs';
 import { ApiService } from '../service/api.service';
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'app-create-registration',
@@ -10,6 +11,8 @@ import { ApiService } from '../service/api.service';
 })
 export class CreateRegistrationComponent implements OnInit {
 public packages=["Monthly","Quaterly","Yearly"]
+public userIdToUpdate!:number
+public isUpdateActive:boolean=false
 public  implists:string[]=[
   "Toxic Fat reduction"
 ,"Energy and endurance"
@@ -18,7 +21,8 @@ public  implists:string[]=[
 ,"Fitness"]
 
 public registerForm!:FormGroup
-constructor(private fb:FormBuilder,private api :ApiService){
+constructor(private fb:FormBuilder,private api :ApiService,
+  private active:ActivatedRoute,private router:Router){
   
 }
 ngOnInit(): void {
@@ -44,13 +48,27 @@ ngOnInit(): void {
     .subscribe(res=>{
     this.calculateBmi(res)
   })
+  this.active.params.subscribe(value=>{
+    console.log(value)
+    this.userIdToUpdate=value['id']
+    this.api.getRegistredUserById(this.userIdToUpdate).subscribe(res=>{
+      this.isUpdateActive=true
+      this.registerForm.patchValue(res)
+    })
+  })
 }
 submit(){
   console.log(this.registerForm.value)
   this.api.postRegistration(this.registerForm.value).subscribe(res=>{
     console.log(res)
+    this.registerForm.reset();
   })
-
+}
+update(){
+  this.api.UpdateRegistredUser(this.registerForm.value,this.userIdToUpdate).subscribe(res=>{
+    this.registerForm.reset();
+    this.router.navigate(['list'])
+  })
 }
 calculateBmi(height:number,){
   const weight =this.registerForm.value.weight;
@@ -70,4 +88,5 @@ calculateBmi(height:number,){
       this.registerForm.controls['bmiresult'].patchValue('Obese')
   }
 }
+
 }

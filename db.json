@@ -1,24 +1,44 @@
 {
   "enquiry": [
     {
-      "firstname": "Amit",
-      "lastname": "Singh",
-      "email": "amit@gmail.com",
-      "mobile": "90909090",
+      "firstname": "satya",
+      "lastname": "singh",
+      "email": "mji@ghhf.com",
+      "mobile": "8989898989",
       "height": 1.7,
-      "weight": 75,
-      "bmi": 25.95155709342561,
-      "bmiresult": "Overweight",
+      "weight": 70,
+      "bmi": 24.221453287197235,
+      "bmiresult": "Normalweight",
       "gender": "Male",
       "requiretrainer": "Yes",
-      "package": "Monthly",
+      "package": "Yearly",
       "important": [
-        "Toxic Fat reduction",
-        "Building Lean Muscle"
+        "Super Craving Body",
+        "Fitness"
       ],
       "havegymbefore": "Yes",
-      "enquirydate": "2023-06-09T18:30:00.000Z",
-      "id": 1
+      "enquirydate": "2023-06-11T18:30:00.000Z",
+      "id": 3
+    },
+    {
+      "firstname": "Vinay",
+      "lastname": "Kumar",
+      "email": "mji@ghhf.com",
+      "mobile": "8989898989",
+      "height": 1.7,
+      "weight": 70,
+      "bmi": 24.221453287197235,
+      "bmiresult": "Normalweight",
+      "gender": "Male",
+      "requiretrainer": "Yes",
+      "package": "Yearly",
+      "important": [
+        "Super Craving Body",
+        "Fitness"
+      ],
+      "havegymbefore": "Yes",
+      "enquirydate": "2023-06-11T18:30:00.000Z",
+      "id": 4
     }
   ]
 }
